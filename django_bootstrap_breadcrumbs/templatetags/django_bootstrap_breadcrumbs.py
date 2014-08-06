@@ -107,7 +107,7 @@ def render_breadcrumbs(context, *args):
                               kwargs=view_kwargs, current_app=current_app)
             except NoReverseMatch:
                 url = viewname
-        links.append((url, _(smart_text(label)) if label else label))
+        links.append((url, smart_text(label) if label else label))
 
     if not links:
         return ''
